@@ -1,0 +1,5 @@
+rootProject.name = 'DinosaurCrud'
+
+includeFlat 'JPADinosaur'
+
+
