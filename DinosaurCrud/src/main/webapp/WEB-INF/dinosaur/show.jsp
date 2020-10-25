@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,40 +11,68 @@
 <title>Show Dinosaur</title>
 </head>
 <body>
-<div class="container fluid">
-
-<div>
-<h2>${dinosaur.name}</h2>
-<h4>"${dinosaur.nameMeaning}"</h4>
-<h4><em>${dinosaur.pronunciation}</em></h4>
-<table class="table table-striped">
-		<thead class="thead thead-dark">
-		  <tr>
-			<th>Type</th>
-			<th>Diet</th>
-			<th>Location</th>
-			<th>Period</th>
-		  </tr>
-		</thead>
-		<tbody>
-			<tr>
-					<td>${dinosaur.type}</td>
-					<td>${dinosaur.diet}</td>
-					<td>${dinosaur.areaLived}</td>
-					<td>${dinosaur.timePeriodLived}</td>
+	<div class="container fluid">
+		<div>
+			<h2>${dinosaur.name}</h2>
+			<h4>"${dinosaur.nameMeaning}"</h4>
+			<h4>
+				<em>${dinosaur.pronunciation}</em>
+			</h4>
+			<table class="table table-striped">
+				<thead class="thead thead-dark">
+					<tr>
+						<th>Type</th>
+						<th>Diet</th>
+						<th>Location</th>
+						<th>Period</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>${dinosaur.type}</td>
+						<td>${dinosaur.diet}</td>
+						<td>${dinosaur.areaLived}</td>
+						<td>${dinosaur.timePeriodLived}</td>
+					</tr>
+				</tbody>
+			</table>
+			<table>
+				<tr>
+					<td><img src="${dinosaur.image}" alt="" width="400"
+						height="300" align="left"></td>
+					<td>
+						<table class="table table-striped" style="width: 100%"
+							style="height: 160%">
+							<thead class="thead thead-dark">
+								<tr>
+									<th>Length in meters</th>
+									<th>Height in meters</th>
+									<th>Weight in KG</th>
+								</tr>
+							</thead>
+							<tr>
+								<td>${dinosaur.lengthM}</td>
+								<td>${dinosaur.heightM}</td>
+								<td>${dinosaur.weightKg}</td>
+							</tr>
+						</table>
+					</td>
 				</tr>
-			
-		</tbody>
-	</table>
-<img src="${dinosaur.image}" alt=""width="400" height="300">
-<h3>${dinosaur.description}</h3>
-<%-- <h3>${dinosaur.diet} ${dinosaur.type}</h3>
-<br> --%>
-<h3>${dinosaur.weightKg} ${dinosaur.heightM} ${dinosaur.lengthM} </h3>
-<br>
-<h3>${dinosaur.taxonomy}</h3>
-</div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+			</table>
+			<table class="table table-striped" style="width: 100%">
+				<thead class="thead thead-dark">
+					<tr>
+						<th>Taxonomy</th>
+					</tr>
+				</thead>
+				<tr>
+					<td>${dinosaur.taxonomy}</td>
+				</tr>
+			</table>
+			<h3>${dinosaur.description}</h3>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 		crossorigin="anonymous"></script>
 	<script
@@ -55,6 +83,5 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
 		integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
 		crossorigin="anonymous"></script>
-</div>
 </body>
 </html>

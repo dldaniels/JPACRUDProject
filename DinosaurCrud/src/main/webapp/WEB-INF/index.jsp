@@ -14,33 +14,25 @@
 <body>
 	<div class="container-fluid">
 		<h1>DINOSAURS! RAWR!</h1>
-    	<h3>Search Dinosaurs by ID</h3>
+		<h3>Search Dinosaurs by ID</h3>
 		<form action="getDinosaur.do" method="GET">
 			Dinosaur ID: <input type="text" name="fid" /> <input type="submit"
 				value="Show Dinosaur" />
 		</form>
 		<table class="table table-striped table-hover">
-		<thead class="thead thead-dark">
-		<tr>
-		
-		<th>Dinosaur Name</th>
-		</tr>
-		</thead>
-		<tbody>
-
-
-		<c:forEach items="${dinosaurs}" var="dino">
-		<tr>
-		
-		<td><a href="getDinosaur.do?fid=${dino.id}">${dino.name}</a></td>
-		</tr>
-		
-		
-		</c:forEach>
-		</tbody>
+			<thead class="thead thead-dark">
+				<tr>
+					<th>Dinosaur Name</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${dinosaurs}" var="dino">
+					<tr>
+						<td><a href="getDinosaur.do?fid=${dino.id}">${dino.name}</a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
 		</table>
-
-
 	</div>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
