@@ -13,12 +13,14 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<h1>DINOSAURS! RAWR!</h1>
+		<h1>O.J's Dinosaur Discovery Zone</h1>
 		<h3>Search Dinosaurs by ID</h3>
+		
 		<form action="getDinosaur.do" method="GET">
 			Dinosaur ID: <input type="text" name="fid" /> <input type="submit"
-				value="Show Dinosaur" />
+				value="Find Dinosaur" />
 		</form>
+		
 		<table class="table table-striped table-hover">
 			<thead class="thead thead-dark">
 				<tr>
@@ -33,7 +35,9 @@
 				</c:forEach>
 			</tbody>
 		</table>
+		
 	</div>
+	
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 		crossorigin="anonymous"></script>
