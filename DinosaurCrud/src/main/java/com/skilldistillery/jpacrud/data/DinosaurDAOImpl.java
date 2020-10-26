@@ -12,11 +12,11 @@ import org.springframework.stereotype.Service;
 
 import com.skilldistillery.jpacrud.entities.Dinosaur;
 
+
+
 @Transactional
 @Service
 public class DinosaurDAOImpl implements DinosaurDAO {
-	
-	
 
 	@PersistenceContext
 	private EntityManager em;
@@ -34,36 +34,71 @@ public class DinosaurDAOImpl implements DinosaurDAO {
 
 	@Override
 	public Dinosaur create(Dinosaur dinosaur) {
-//		EntityManager em = emf.createEntityManager();
-
-//		em.getTransaction().begin();
-
-	//	System.out.println("Dinosaur before " + dinosaur);
-
 		em.persist(dinosaur);
-	//	System.out.println("Dinosaur before " + dinosaur);
-
 		em.flush();
-
-	//	em.getTransaction().commit();
-
-	//	em.close();
 		return dinosaur;
-		
+
 	}
 
 	@Override
-	public Dinosaur update(int id, Dinosaur dinosaur) {
-		Dinosaur dino = em.find(Dinosaur.class, dinosaur.getId());
-		System.out.println(dino.toString());
+	public Dinosaur update(Integer id , Dinosaur dinosaur) {
+		Dinosaur dinoUpdate = em.find(Dinosaur.class, id);
+
+		dinoUpdate.setName(dinosaur.getName());
+		dinoUpdate.setPronunciation(dinosaur.getPronunciation());
+		dinoUpdate.setNameMeaning(dinosaur.getNameMeaning());
+		dinoUpdate.setDescription(dinosaur.getDescription());
+		dinoUpdate.setDiet(dinosaur.getDiet());
+		dinoUpdate.setType(dinosaur.getType());
+		dinoUpdate.setAreaLived(dinosaur.getAreaLived());
+		dinoUpdate.setTimePeriodLived(dinosaur.getTimePeriodLived());
+		dinoUpdate.setTaxonomy(dinosaur.getTaxonomy());
+		dinoUpdate.setHeightM(dinosaur.getHeightM());
+		dinoUpdate.setLengthM(dinosaur.getLengthM());
+		dinoUpdate.setWeightKg(dinosaur.getWeightKg());
+		dinoUpdate.setImage(dinosaur.getImage());
+
+	//	System.out.println(dinoUpdate.toString());
 		
-		return dino;
+	//	em.persist(dinoUpdate);
+	//	em.flush();
+
+		return dinosaur;
 	}
 
 	@Override
-	public boolean destroy(int id) {
+	public boolean deleteDinosaur(int id) {
+//		Dinosaur dinosaur = em.find(Dinosaur.class, id);
+//		em.remove(dinosaur);
+//		em.flush();
+//		return (dinosaur == null);
 		
-		return false;
+		
+try {
+			
+			Dinosaur dinosaur =em.find(Dinosaur.class,id);
+			
+			em.remove(dinosaur);
+			
+			return true;
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+
+	}
+
+	@Override
+	public List<Dinosaur> findHerbivore() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Dinosaur> findCarnivore() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 //	@Override

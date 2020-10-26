@@ -4,20 +4,43 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>Show Dinosaur</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
-<title>Show Dinosaur</title>
 </head>
+<%--  <jsp:include page="navigation.jsp"><jsp:param value=""
+		name="" /></jsp:include>
+		<br>  --%>
+
+
+
 <body>
+
 	<div class="container fluid">
 		<div>
+
 			<h2>${dinosaur.name}</h2>
 			<h4>"${dinosaur.nameMeaning}"</h4>
 			<h4>
 				<em>${dinosaur.pronunciation}</em>
 			</h4>
+			Delete Dinosaur
+			<form action="deleteDinosaur.do" method="GET">
+				<input type="number" name="dinosaurs"
+					placeholder="enter Dinosaur Number" value="Delete Dinosaur"
+					required="required" />
+				<button class="btn btn-outline-primary" type="submit" name="id"
+					value="${dinosaur.id}">Delete Dinosaur</button>
+
+			</form>
+
+			Edit Dinosaur
+			<form action="editDinosaur.do" method="GET">
+				<button class="btn btn-outline-primary" type="submit" name="id"
+					value="${dinosaur.id}">Edit Dinosaur</button>
+			</form>
 			<table class="table table-striped">
 				<thead class="thead thead-dark">
 					<tr>
@@ -50,14 +73,32 @@
 									<th>Weight in KG</th>
 								</tr>
 							</thead>
-							<tr>
-								<td>${dinosaur.lengthM}</td>
-								<td>${dinosaur.heightM}</td>
-								<td>${dinosaur.weightKg}</td>
-							</tr>
+							<tbody>
+								<tr>
+									<td>${dinosaur.lengthM}</td>
+									<td>${dinosaur.heightM}</td>
+									<td>${dinosaur.weightKg}</td>
+								</tr>
+							</tbody>
 						</table>
 					</td>
 				</tr>
+			</table>
+			<table class="table table-striped" style="width: 100%">
+				<thead class="thead thead-dark">
+					<tr>
+						<th>Dinosaur Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>${dinosaur.description}</td>
+					</tr>
+				</tbody>
+
+
+
+
 			</table>
 			<table class="table table-striped" style="width: 100%">
 				<thead class="thead thead-dark">
@@ -69,7 +110,7 @@
 					<td>${dinosaur.taxonomy}</td>
 				</tr>
 			</table>
-			<h3>${dinosaur.description}</h3>
+
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

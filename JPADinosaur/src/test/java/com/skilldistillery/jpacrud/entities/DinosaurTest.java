@@ -47,7 +47,7 @@ class DinosaurTest {
 	@Test
 	void test_Dinosaur_entity_mapping() {
 		assertNotNull(dinosaur);
-		assertEquals("Allosaurus", dinosaur.getName());
+		assertEquals("Aardonyx", dinosaur.getName());
 	}
 
 }

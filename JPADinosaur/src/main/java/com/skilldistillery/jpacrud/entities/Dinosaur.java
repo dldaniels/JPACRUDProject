@@ -52,6 +52,15 @@ public class Dinosaur {
 		super();
 	}
 
+	
+
+	public Dinosaur(String name) {
+		super();
+		this.name = name;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

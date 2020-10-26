@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jpacrud.data.DinosaurDAO;
 import com.skilldistillery.jpacrud.entities.Dinosaur;
@@ -16,11 +19,16 @@ public class DinosaurController {
 	@Autowired
 	private DinosaurDAO dinoDao;
 
-	@RequestMapping(path = "/")
-	public String index(Model model) {
-		List<Dinosaur>dinosaurList = dinoDao.findAll();
-		model.addAttribute("dinosaurs", dinosaurList);
+	@RequestMapping(path = "/", method = RequestMethod.GET)
+	public String index() {
 		return "index";
+	}
+
+	@RequestMapping(path = "getList.do", method = RequestMethod.GET)
+	public String dinosaurList(Model model) {
+		List<Dinosaur> dinosaurList = dinoDao.findAll();
+		model.addAttribute("dinosaurs", dinosaurList);
+		return "dinosaur/dinosaurList";
 	}
 
 	@RequestMapping(path = "getDinosaur.do")
@@ -28,5 +36,40 @@ public class DinosaurController {
 		Dinosaur dinosaur = dinoDao.findByID(fid);
 		model.addAttribute("dinosaur", dinosaur);
 		return "dinosaur/show";
+	}
+
+	@RequestMapping(path = "createDinosaurForm.do", method = RequestMethod.GET)
+	public String createDinosaurForm(Dinosaur dinosaur) {
+		return "dinosaur/addDino";
+	}
+
+	@RequestMapping(path = "deleteDinosaur.do", method = RequestMethod.GET)
+	public ModelAndView deleteDinosaur(@RequestParam("dinosaurs") int fid, Model model) {
+		ModelAndView mv = new ModelAndView();
+		boolean result = dinoDao.deleteDinosaur(fid);
+		mv.addObject(result);
+		mv.setViewName("index");
+		return mv;
+
+	}
+
+	@RequestMapping(path = "create.do")
+	public String createDinosaur(Dinosaur dinosaur, Model model) {
+		model.addAttribute("dinosaur", dinoDao.create(dinosaur));
+		return "dinosaur/show";
+	}
+
+	@RequestMapping(path = "editDinosaur.do")
+	public String editDinosaur(Dinosaur dinosaur, Integer id, Model model) {
+		model.addAttribute("dinosaur", dinoDao.findByID(id));
+		return "dinosaur/update";
+	}
+
+	@RequestMapping(path = "updateDinosaur.do")
+	public String updateDinosaur(Integer id, Model model, Dinosaur dinosaur) {
+		dinoDao.update(id, dinosaur);
+		model.addAttribute("dinosaur", dinosaur);
+		return "dinosaur/show";
+
 	}
 }

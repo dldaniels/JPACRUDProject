@@ -12,9 +12,14 @@ public interface DinosaurDAO {
 	
 	public Dinosaur create(Dinosaur dinosaur);
 	
-	public Dinosaur update (int id, Dinosaur dinosaur);
+	public Dinosaur update (Integer id , Dinosaur dinosaur);
 	
-	public boolean destroy (int id);
+	public boolean deleteDinosaur (int id);
+	
+	List<Dinosaur> findHerbivore();
+	
+	List<Dinosaur> findCarnivore();
+	
 	
 //	Dinosaur findByKeyword(String keyword);
 
