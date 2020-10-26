@@ -14,52 +14,47 @@ public class Dinosaur {
 	private int id;
 
 	private String name;
-	
+
 	private String diet;
-	
-    @Column(name="area_lived")
+
+	@Column(name = "area_lived")
 	private String areaLived;
-    
-    @Column(name="time_period_lived")
+
+	@Column(name = "time_period_lived")
 	private String timePeriodLived;
 
 	private String description;
 
-	@Column(name="weight_in_kg")
+	@Column(name = "weight_in_kg")
 	private Integer weightKg;
-	
-	@Column(name="height_in_meters")
+
+	@Column(name = "height_in_meters")
 	private Integer heightM;
-	
-	@Column(name="length_in_meters")
+
+	@Column(name = "length_in_meters")
 	private Integer lengthM;
-	
-	@Column(name="type_of_dinosaur")
+
+	@Column(name = "type_of_dinosaur")
 	private String type;
-	
-	@Column(name="name_pronunciation")
+
+	@Column(name = "name_pronunciation")
 	private String pronunciation;
-	
-	@Column(name="name_meaning")
+
+	@Column(name = "name_meaning")
 	private String nameMeaning;
 
 	private String taxonomy;
 
-	
 	private String image;
 
 	public Dinosaur() {
 		super();
 	}
 
-	
-
 	public Dinosaur(String name) {
 		super();
 		this.name = name;
 	}
-
-
 
 	public int getId() {
 		return id;
@@ -186,5 +181,3 @@ public class Dinosaur {
 	}
 
 }
-
-

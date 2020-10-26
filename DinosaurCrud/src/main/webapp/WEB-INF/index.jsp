@@ -11,12 +11,12 @@
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
 </head>
-  
+
 <body>
 	<div class="container-fluid">
 		<h1 align="center">Welcome to O.J's Dinosaur Discovery Toybox</h1>
 
-		
+
 
 
 
@@ -24,18 +24,18 @@
 			<table class="table table-striped table-hover">
 				<thead class="thead thead-dark">
 					<tr>
-					
+
 						<th>Explore O.J's Dinosaur toybox :</th>
-					
+
 					</tr>
 					<tr>
-			
-			
-			</tr>
+
+
+					</tr>
 				</thead>
 				<tbody>
-			
-						<tr>
+
+					<tr>
 
 						<td>Add a Dinosaur:</td>
 
@@ -47,26 +47,7 @@
 					</tr>
 
 					<tr>
-					
-					<!-- <tr>
-
-						<td>Update Dinosaurs:</td>
-
-						<td>
-							<form action="update.do" method="GET">
-								<input type="submit" value="View All" />
-							</form>
-						</td>
-					</tr> -->
-
 					<tr>
-					
-					
-		
-		
-		
-		
-		
 					<tr>
 
 						<td>View all Dinosaurs:</td>
@@ -100,65 +81,32 @@
 						</td>
 					</tr>
 
-				 	<tr>
+					<tr>
 
 						<td>Search:</td>
 
 						<td>
 							<form action="getSearch.do" method="GET">
 								<input type="text" name="search" value="Search" />
-								<button class="btn btn-outline-primary" type="submit" name="Search">Search</button>
+								<button class="btn btn-outline-primary" type="submit"
+									name="Search">Search</button>
 							</form>
 						</td>
 					</tr>
-					
-					
-			<%-- 		<form action="deleteDinosaur.do" method="GET">
-				<input type="number" name="dinosaurs"
-					placeholder="enter Dinosaur Number" value="Delete Dinosaur"
-					required="required" />
-				<button class="btn btn-outline-primary" type="submit" name="id"
-					value="${dinosaur.id}">Delete Dinosaur</button>
 
-			</form> --%>
-
-				<!-- 	<tr>
-
-						<td>Dinosaurs by when they lived:</td>
-
-						<td>
-							<form action="getList.do" method="GET">
-								<input type="submit" value="View All" />
-							</form>
-						</td>
-					</tr>
-  -->
 
 
 
 
 				</tbody>
 			</table>
-			
+
 			<img src="images/ojdinosaurs.jpg" width="100%" height="100%"
-			align="right" />
+				align="right" />
 
 		</div>
 
-		<%-- 	<table class="table table-striped table-hover">
-			<thead class="thead thead-dark">
-				<tr>
-					<th>Dinosaur Name</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${dinosaurs}" var="dino">
-					<tr>
-						<td><a href="getDinosaur.do?fid=${dino.id}">${dino.name}</a></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table> --%>
+
 
 	</div>
 

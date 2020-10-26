@@ -10,9 +10,6 @@
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
 </head>
-<%--  <jsp:include page="navigation.jsp"><jsp:param value=""
-		name="" /></jsp:include>
-		<br>  --%>
 
 
 
@@ -28,9 +25,8 @@
 			</h4>
 			Delete Dinosaur
 			<form action="deleteDinosaur.do" method="GET">
-				<input type="number" name="dinosaurs"
-					placeholder="${dinosaur.id}" value="Delete Dinosaur"
-					required="required" />
+				<input type="number" name="dinosaurs" placeholder="${dinosaur.id}"
+					value="Delete Dinosaur" required="required" />
 				<button class="btn btn-outline-primary" type="submit" name="id"
 					value="${dinosaur.id}">Delete Dinosaur</button>
 

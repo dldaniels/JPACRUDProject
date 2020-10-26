@@ -23,14 +23,15 @@
 		<input type="hidden" name="id" value="${dinosaur.id}" /> Name: <input
 			type="text" name="name" value="${dinosaur.name}" /> Type: <input
 			type="text" name="type" value=" ${dinosaur.type}" /> Diet: <input
-			type="text" name="diet" value="${dinosaur.diet} " /> Pronunciation: <input
-			type="text" name="pronunciation" value="${dinosaur.pronunciation}" />
-		Image: <input type="text" name="image" value="${dinosaur.image}" />
-		Taxonomy: <input type="text" name="taxonomy"
-			value="${dinosaur.taxonomy}" /> Description: <input type="text"
-			name="description" value=" ${dinosaur.description}" /> Name Meaning:
-		<input type="text" name="nameMeaning" value="${dinosaur.nameMeaning} " />
-		Time Period Lived: <input type="text" name="timePeriodLived"
+			type="text" name="diet" value="${dinosaur.diet} " /> Pronunciation:
+		<input type="text" name="pronunciation"
+			value="${dinosaur.pronunciation}" /> Image: <input type="text"
+			name="image" value="${dinosaur.image}" /> Taxonomy: <input
+			type="text" name="taxonomy" value="${dinosaur.taxonomy}" />
+		Description: <input type="text" name="description"
+			value=" ${dinosaur.description}" /> Name Meaning: <input type="text"
+			name="nameMeaning" value="${dinosaur.nameMeaning} " /> Time Period
+		Lived: <input type="text" name="timePeriodLived"
 			value="${dinosaur.timePeriodLived}" /> Area Lived: <input
 			type="text" name="areaLived" value="${dinosaur.areaLived}" /> Height
 		in Meters: <input type="number" name="heightM"

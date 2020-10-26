@@ -12,8 +12,6 @@ import org.springframework.stereotype.Service;
 
 import com.skilldistillery.jpacrud.entities.Dinosaur;
 
-
-
 @Transactional
 @Service
 public class DinosaurDAOImpl implements DinosaurDAO {
@@ -41,7 +39,7 @@ public class DinosaurDAOImpl implements DinosaurDAO {
 	}
 
 	@Override
-	public Dinosaur update(Integer id , Dinosaur dinosaur) {
+	public Dinosaur update(Integer id, Dinosaur dinosaur) {
 		Dinosaur dinoUpdate = em.find(Dinosaur.class, id);
 
 		dinoUpdate.setName(dinosaur.getName());
@@ -58,31 +56,25 @@ public class DinosaurDAOImpl implements DinosaurDAO {
 		dinoUpdate.setWeightKg(dinosaur.getWeightKg());
 		dinoUpdate.setImage(dinosaur.getImage());
 
-	//	System.out.println(dinoUpdate.toString());
-		
-	//	em.persist(dinoUpdate);
-	//	em.flush();
+		// System.out.println(dinoUpdate.toString());
+
+		// em.persist(dinoUpdate);
+		// em.flush();
 
 		return dinosaur;
 	}
 
 	@Override
 	public boolean deleteDinosaur(int id) {
-//		Dinosaur dinosaur = em.find(Dinosaur.class, id);
-//		em.remove(dinosaur);
-//		em.flush();
-//		return (dinosaur == null);
-		
-		
-try {
-			
-			Dinosaur dinosaur =em.find(Dinosaur.class,id);
-			
+
+		try {
+
+			Dinosaur dinosaur = em.find(Dinosaur.class, id);
+
 			em.remove(dinosaur);
-			
+
 			return true;
-		} 
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}
@@ -91,41 +83,26 @@ try {
 
 	@Override
 	public List<Dinosaur> findHerbivore(String herbivore) {
-			String jpql = "SELECT d FROM Dinosaur d WHERE d.diet LIKE :h";
-			List<Dinosaur> herbivores = em.createQuery(jpql, Dinosaur.class).setParameter("h", herbivore)
-					.getResultList();
-			return herbivores;
-		}
+		String jpql = "SELECT d FROM Dinosaur d WHERE d.diet LIKE :h";
+		List<Dinosaur> herbivores = em.createQuery(jpql, Dinosaur.class).setParameter("h", herbivore).getResultList();
+		return herbivores;
+	}
 
 	@Override
 	public List<Dinosaur> findCarnivore(String carnivore) {
 		String jpql = "SELECT d FROM Dinosaur d WHERE d.diet LIKE :c";
-		List<Dinosaur> carnivores = em.createQuery(jpql, Dinosaur.class).setParameter("c", carnivore)
-				.getResultList();
+		List<Dinosaur> carnivores = em.createQuery(jpql, Dinosaur.class).setParameter("c", carnivore).getResultList();
 		return carnivores;
-		
+
 	}
 
 	@Override
 	public List<Dinosaur> findByKeyword(String keyword) {
-			String jpql = "SELECT d from Dinosaur d "
-					+ "WHERE d.name LIKE :keyword||'%' "
-					+ "OR d.description LIKE :keyword||'%' "
-			  	    + "OR d.type_of_dinosaur LIKE :keyword||'%' "
-					+ "OR d.diet LIKE :keyword||'%' "
-					+ "OR d.time_period_lived LIKE :keyword||'%' "
-					+ "OR d.area_lived LIKE :keyword||'%' "
-					+ "ORDER BY d.name DESC";
-			return em.createQuery(jpql, Dinosaur.class)
-					.setParameter("keyword", keyword)
-					.getResultList();
-		}
-	
-
-//	@Override
-//	public Dinosaur findByKeyword(String keyword) {
-//		String jpql ="SELECT d FROM d WHERE title LIKE "
-//		return null;
-//	}
+		String jpql = "SELECT d from Dinosaur d " + "WHERE d.name LIKE :keyword||'%' "
+				+ "OR d.description LIKE :keyword||'%' " + "OR d.type_of_dinosaur LIKE :keyword||'%' "
+				+ "OR d.diet LIKE :keyword||'%' " + "OR d.time_period_lived LIKE :keyword||'%' "
+				+ "OR d.area_lived LIKE :keyword||'%' " + "ORDER BY d.name DESC";
+		return em.createQuery(jpql, Dinosaur.class).setParameter("keyword", keyword).getResultList();
+	}
 
 }

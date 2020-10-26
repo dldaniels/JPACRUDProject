@@ -72,20 +72,21 @@ public class DinosaurController {
 		return "dinosaur/show";
 
 	}
-	
+
 	@RequestMapping(path = "getHerbivore.do", method = RequestMethod.GET)
 	public String herbivoreList(Model model) {
 		List<Dinosaur> herbivoreList = dinoDao.findHerbivore("herbivore");
 		model.addAttribute("dinosaurs", herbivoreList);
 		return "dinosaur/dinosaurList";
 	}
+
 	@RequestMapping(path = "getCarnivore.do", method = RequestMethod.GET)
 	public String carnivoreList(Model model) {
 		List<Dinosaur> carnivoreList = dinoDao.findCarnivore("carnivore");
 		model.addAttribute("dinosaurs", carnivoreList);
 		return "dinosaur/dinosaurList";
 	}
-	
+
 	@RequestMapping(path = "getSearch.do", method = RequestMethod.GET)
 	public String dinosaurSearch(String keyword, Model model) {
 		List<Dinosaur> dinosaurList = dinoDao.findByKeyword(keyword);

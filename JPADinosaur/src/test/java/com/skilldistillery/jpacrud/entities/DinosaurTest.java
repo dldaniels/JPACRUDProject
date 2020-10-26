@@ -35,7 +35,7 @@ class DinosaurTest {
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
 		dinosaur = em.find(Dinosaur.class, 1);
-}
+	}
 
 	@AfterEach
 	void tearDown() throws Exception {
