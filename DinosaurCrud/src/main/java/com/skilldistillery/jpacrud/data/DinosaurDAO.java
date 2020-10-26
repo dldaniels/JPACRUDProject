@@ -6,9 +6,9 @@ import com.skilldistillery.jpacrud.entities.Dinosaur;
 
 public interface DinosaurDAO {
 
-	Dinosaur findByID(int id);
+	public Dinosaur findByID(int id);
 
-	List<Dinosaur> findAll();
+	public List<Dinosaur> findAll();
 	
 	public Dinosaur create(Dinosaur dinosaur);
 	
@@ -16,11 +16,11 @@ public interface DinosaurDAO {
 	
 	public boolean deleteDinosaur (int id);
 	
-	List<Dinosaur> findHerbivore();
+	public List<Dinosaur> findHerbivore(String herbivore);
 	
-	List<Dinosaur> findCarnivore();
+	public List<Dinosaur> findCarnivore(String diet);
 	
 	
-//	Dinosaur findByKeyword(String keyword);
+	public List<Dinosaur> findByKeyword(String keyword);
 
 }

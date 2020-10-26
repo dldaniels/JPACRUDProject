@@ -90,16 +90,37 @@ try {
 	}
 
 	@Override
-	public List<Dinosaur> findHerbivore() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Dinosaur> findHerbivore(String herbivore) {
+			String jpql = "SELECT d FROM Dinosaur d WHERE d.diet LIKE :h";
+			List<Dinosaur> herbivores = em.createQuery(jpql, Dinosaur.class).setParameter("h", herbivore)
+					.getResultList();
+			return herbivores;
+		}
+
+	@Override
+	public List<Dinosaur> findCarnivore(String carnivore) {
+		String jpql = "SELECT d FROM Dinosaur d WHERE d.diet LIKE :c";
+		List<Dinosaur> carnivores = em.createQuery(jpql, Dinosaur.class).setParameter("c", carnivore)
+				.getResultList();
+		return carnivores;
+		
 	}
 
 	@Override
-	public List<Dinosaur> findCarnivore() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public List<Dinosaur> findByKeyword(String keyword) {
+			String jpql = "SELECT d from Dinosaur d "
+					+ "WHERE d.name LIKE :keyword||'%' "
+					+ "OR d.description LIKE :keyword||'%' "
+			  	    + "OR d.type_of_dinosaur LIKE :keyword||'%' "
+					+ "OR d.diet LIKE :keyword||'%' "
+					+ "OR d.time_period_lived LIKE :keyword||'%' "
+					+ "OR d.area_lived LIKE :keyword||'%' "
+					+ "ORDER BY d.name DESC";
+			return em.createQuery(jpql, Dinosaur.class)
+					.setParameter("keyword", keyword)
+					.getResultList();
+		}
+	
 
 //	@Override
 //	public Dinosaur findByKeyword(String keyword) {

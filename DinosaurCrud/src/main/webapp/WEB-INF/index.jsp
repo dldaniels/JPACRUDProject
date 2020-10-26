@@ -11,49 +11,43 @@
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
 </head>
- <jsp:include page="navigation.jsp"><jsp:param value=""
-		name="" /></jsp:include> 
+  
 <body>
 	<div class="container-fluid">
 		<h1 align="center">Welcome to O.J's Dinosaur Discovery Toybox</h1>
 
-		<img src="images/ojdinosaurs.jpg" width="45%" height="45%"
-			align="right" />
+		
 
 
 
-		<div ailgn="left">
-			<table class="table table-striped table-hover" width="50%"
-				height="50%">
+		<div>
+			<table class="table table-striped table-hover">
 				<thead class="thead thead-dark">
 					<tr>
 						<th>Explore O.J's Dinosaur toybox by:</th>
+					
 					</tr>
+					<tr>
+			
+			</td>
+			</tr>
 				</thead>
 				<tbody>
-					<!-- 		<tr>
-				<td>Dinosaur Name:</td>
-				<td>
-				<form action="getDinosaur.do" method="GET">
-			 <input type="text" name="fid" /> <input type="submit"
-				value="Find Dinosaur" />
-		</form> 
-		</td>
-		</tr> -->
+			
 						<tr>
 
-						<td>Create Dinosaurs:</td>
+						<td>Add a Dinosaur:</td>
 
 						<td>
 							<form action="createDinosaurForm.do" method="GET">
-								<input type="submit" value="Create" />
+								<input type="submit" value="Add Dinosaur" />
 							</form>
 						</td>
 					</tr>
 
 					<tr>
 					
-					<tr>
+					<!-- <tr>
 
 						<td>Update Dinosaurs:</td>
 
@@ -62,7 +56,7 @@
 								<input type="submit" value="View All" />
 							</form>
 						</td>
-					</tr>
+					</tr> -->
 
 					<tr>
 					
@@ -74,7 +68,7 @@
 		
 					<tr>
 
-						<td>All Dinosaurs:</td>
+						<td>View all Dinosaurs:</td>
 
 						<td>
 							<form action="getList.do" method="GET">
@@ -85,10 +79,10 @@
 
 					<tr>
 
-						<td>Dinosaurs by type:</td>
+						<td>View all Herbivores:</td>
 
 						<td>
-							<form action="getList.do" method="GET">
+							<form action="getHerbivore.do" method="GET">
 								<input type="submit" value="View All" />
 							</form>
 						</td>
@@ -96,27 +90,38 @@
 
 					<tr>
 
-						<td>Dinosaurs by diet:</td>
+						<td>View all Carnivores:</td>
 
 						<td>
-							<form action="getList.do" method="GET">
+							<form action="getCarnivore.do" method="GET">
 								<input type="submit" value="View All" />
 							</form>
 						</td>
 					</tr>
 
-					<tr>
+				 	<tr>
 
-						<td>Dinosaurs where they lived:</td>
+						<td>Search:</td>
 
 						<td>
-							<form action="getList.do" method="GET">
-								<input type="submit" value="View All" />
+							<form action="getSearch.do" method="GET">
+								<input type="text" name="search" value="Search" />
+								<button class="btn btn-outline-primary" type="submit" name="Search">Search</button>
 							</form>
 						</td>
 					</tr>
+					
+					
+			<%-- 		<form action="deleteDinosaur.do" method="GET">
+				<input type="number" name="dinosaurs"
+					placeholder="enter Dinosaur Number" value="Delete Dinosaur"
+					required="required" />
+				<button class="btn btn-outline-primary" type="submit" name="id"
+					value="${dinosaur.id}">Delete Dinosaur</button>
 
-					<tr>
+			</form> --%>
+
+				<!-- 	<tr>
 
 						<td>Dinosaurs by when they lived:</td>
 
@@ -126,13 +131,16 @@
 							</form>
 						</td>
 					</tr>
-
+  -->
 
 
 
 
 				</tbody>
 			</table>
+			
+			<img src="images/ojdinosaurs.jpg" width="100%" height="100%"
+			align="right" />
 
 		</div>
 

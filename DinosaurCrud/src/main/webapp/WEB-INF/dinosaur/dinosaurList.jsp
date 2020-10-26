@@ -12,9 +12,7 @@
 	crossorigin="anonymous">
 </head>
 
- <%-- <jsp:include page="navigation.jsp"><jsp:param value=""
-		name="" /></jsp:include>
-		<br>  --%>
+ 
 
 <body>
 	<div class="container-fluid">
