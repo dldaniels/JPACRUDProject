@@ -24,12 +24,13 @@
 			<table class="table table-striped table-hover">
 				<thead class="thead thead-dark">
 					<tr>
+					
 						<th>Explore O.J's Dinosaur toybox :</th>
 					
 					</tr>
 					<tr>
 			
-			</td>
+			
 			</tr>
 				</thead>
 				<tbody>

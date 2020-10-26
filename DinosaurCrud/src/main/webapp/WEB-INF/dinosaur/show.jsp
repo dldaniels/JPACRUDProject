@@ -29,7 +29,7 @@
 			Delete Dinosaur
 			<form action="deleteDinosaur.do" method="GET">
 				<input type="number" name="dinosaurs"
-					placeholder="enter Dinosaur Number" value="Delete Dinosaur"
+					placeholder="${dinosaur.id}" value="Delete Dinosaur"
 					required="required" />
 				<button class="btn btn-outline-primary" type="submit" name="id"
 					value="${dinosaur.id}">Delete Dinosaur</button>
