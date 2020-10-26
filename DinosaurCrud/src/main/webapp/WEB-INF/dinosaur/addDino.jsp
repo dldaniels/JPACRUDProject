@@ -32,6 +32,24 @@
 		Height<input type="number" name="heightM" placeholder="Height" /><br>
 		Length<input type="number" name="lengthM" placeholder="Length" /><br>
 		Weight<input type="number" name="weightKg" placeholder="Weight" /><br>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 
 		<input class="btn btn-warning" type="submit" value="Add Dinosaur" />
